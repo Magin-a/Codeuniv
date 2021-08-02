@@ -1,0 +1,25 @@
+Day4(https://cafe.naver.com/codeuniv/11287)
+
+크롤링을 알기 위해서 먼저 웹 페이지에 대해서 알아야합니다.
+
+웹 페이지는 HTML을 기반으로 하는데요, 
+
+HTML(HyperText Markup Language)은 '마크로 둘러싸인 언어'라는 뜻으로 구조에 대한 정보를 기반으로 작성된 언어입니다.
+
+
+다시 말하자면, 웹 페이지를 이루고 있는 구성 요소들에 대해 작성되어 있는 문서 또는 가이드북 이라고 생각하시면 됩니다.
+더 쉽게 말하자면, 웹 페이지를 만들기 위한 언어입니다
+
+
+✔️ ul 태그: unordered list. 순서가 필요없는 목록.
+
+✔️ li 태그: list item. 목록의 내용이 되는 실질적 태그.
+
+✔️ a 태그: 링크를 나타냅니다.
+
+ex) <a href="https://www.naver.com">네이버</a>
+
+✔️ p 태그: paragraph(단락)의 약자이므로 긴 글 뭉텅이.
+
+
+(https://cafe.naver.com/codeuniv/31751)
