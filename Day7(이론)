@@ -1,0 +1,47 @@
+#📌 BeautifulSoup 살펴보기
+from bs4 import BeautifulSoup
+함수 BeautifulSoup()
+앞서 설명드렸듯이 문자열 타입으로 HTML 코드를 갖는 'raw.text'(Day6 참고)를 실제 HTML 코드로 변환해주어야 합니다.
+이를 위한 내장함수가 바로 BeautifulSoup() 입니다.
+     BeautifulSoup(문자열, 'html.parser')
+     코드를 해석하자면 '문자열을 HTML 코드로 해석하여 읽어라' 라는 내용입니다.
+
+1. 함수 find_all()
+find_all() 함수는 HTML 코드에서 우리가 원하는 부분을 모두 가져오는 함수
+find_all()은 해당 태그의 모든 HTML 코드를 *list* 형태로 반환해준다.
+
+
+
+원하는 부분의 태그 1개: <div id="example1">
+
+사용법 1. 태그 이름 사용 
+(실제 HTML 코드).find_all('div')
+
+사용법 2. 선택자 정보 사용 
+(실제 HTML 코드).find_all(id = 'example1')
+
+원하는 부분의 태그 2개: <div id="example1">, <span class="example2">
+
+사용법 1. 태그 이름 사용 
+(실제 HTML 코드).find_all(['div', 'span'])
+
+사용법 2. 선택자 정보 사용
+(실제 HTML 코드).find_all(attrs = {'id':'example1','class':'example2'})
+
+
+2. find()
+find_all()과는 다르게 딱 하나만 가져온다.
+
+원하는 부분의 태그: <div id="example1">
+
+사용법 1. 태그 이름 사용 
+(실제 HTML 코드).find('div')
+
+사용법 2. 선택자 정보 사용 
+(실제 HTML 코드).find(id = 'example1')
+(실제 HTML 코드).find(attrs = {'id':'example1'})
+
+사용법 3. 태그 이름과 선택자 정보 모두 사용
+(실제 HTML 코드).find('div', {'id' : 'example1'})
+
+<span class="date_time">2021.07.14 18:43</span>
