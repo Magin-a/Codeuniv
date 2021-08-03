@@ -31,7 +31,7 @@ driver.close()
 from selenium import webdriver
 import time
 
-driver = webdriver.Chrome('C:/Users/박영웅/Desktop/python연습장/이온2파이썬/코뮤니티/크롤링/chromedriver_win32/chromedriver.exe')
+driver = webdriver.Chrome('_win32/chromedriver.exe')
 my_url = 'https://naver.com/'
 driver.get(my_url)
 
