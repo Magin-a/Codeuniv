@@ -99,7 +99,7 @@ print ("속보 기사 개수 :",count)
 
 import csv
 
-f=open('C:\Users\박영웅\Desktop\python연습장\이온2파이썬\코뮤니티\크롤링/covid19_articles.csv','r', encoding = 'euc-kr')
+f=open('covid19_articles.csv','r', encoding = 'euc-kr')
 
 
 rdr=csv.reader(f)
