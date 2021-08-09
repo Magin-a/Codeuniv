@@ -1,0 +1,36 @@
+1️⃣ 디스코드의 개발자 포탈에 접속 해 주세요. 로그인이 필요합니다! 
+
+https://discord.com/developers/applications
+
+2️⃣ New Application을 클릭 해 주세요.
+
+
+6️⃣ 봇이 생성되었으면, 중간에 위치한 Privileged Gateway Intents의 두 설정 모두 체크 해 주세요.
+✔ Presence Intent는 사용자의 상태, 정보 값을 봇이 불러올 수 있도록 해요.
+
+✔ Member Inetnt는 사용자가 서버에 접속한 유무와, 서버 멤버 목록을 불러올 수 있도록 해요.
+
+이렇게 봇 생성은 완료되었어요! 
+
+
+✅ 디스코드 봇 등록
+
+1️⃣위의 봇 생성에 이어서, 이번에는 OAuth2 설정으로 들어가 주세요.
+
+2️⃣아래에 있는 OAuth2 URL Generator에서, Bot을 선택 해 주세요.
+
+3️⃣ 새롭게 나온 BOT PERMISSION탭에서 Adminstrator를 선택 해 주세요.
+
+4️⃣ 2번의 OAuth URL Genarator에서 주소를 복사 해 주세요.
+
+5️⃣ 주소창에 붙여 넣으신 뒤, 서버를 선택하고 계속하기를 눌러 주세요.
+
+6️⃣ 봇의 관리자 권한을 승인 해 주세요.
+
+⭐정리하기⭐
+
+✔ 챗봇이란?
+
+✔ 디스코드 서버 생성
+
+✔ 디스코드 봇 생성, 등록
