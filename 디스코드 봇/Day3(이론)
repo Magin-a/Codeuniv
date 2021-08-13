@@ -1,0 +1,88 @@
+#동기 방식의 함수
+import time
+def time_wait(n):
+    for i in range(3):
+        time.sleep(1)
+        print(f"{n} : {i+1}번째")
+    print()
+
+def process_time():
+    start = time.time()
+    time_wait(3)
+    time_wait(1)
+    end = time.time()
+    print("경과시간 : ", end-start)
+
+process_time()
+
+// 실행결과
+3 : 1번째
+3 : 2번째
+3 : 3번째
+
+1 : 1번째
+1 : 2번째
+1 : 3번째
+
+경과시간 :  6.070760231018066
+
+#비동기식 방식의 함수
+import time
+import asyncio
+async def async_wait(n):
+    for i in range(3):
+        await asyncio.sleep(1)
+        print(f"{n} : {i+1}번째")
+
+async def process_async():
+    start = time.time()
+    await asyncio.wait([
+    async_wait(3),
+    async_wait(1)
+    ])
+    end = time.time()
+    print("경과시간 : ", end-start)
+
+asyncio.run(process_async())
+
+// 실행결과
+1 : 1번째
+3 : 1번째
+1 : 2번째
+3 : 2번째
+1 : 3번째
+3 : 3번째
+경과시간 :  3.0376529693603516
+-------------------------------------------------------
+#예시
+# main.py
+import discord
+from discord.ext import commands
+import os
+
+def main():
+    prefix = '!'
+    intents = discord.Intents.all()
+
+    client = commands.Bot(command_prefix=prefix, intents = intents)
+
+    @client.command(name = 'ping') #명령어를 등록한다.
+    async def _ping(ctx): #명령어를 받아 메세지를 전송하는 작업은 디스코드의 API와 연동을 해야하기 때문에 비동기 함수로 구현된답니다.
+        await ctx.send("pong!")
+
+    with open('token.txt', 'r') as f:
+        token = f.read()
+
+    client.run(token)
+
+if __name__ == '__main__':
+    main()
+    
+    
+---------------------------------------------------------
+ctx라는 인자는 context의 줄임말
+✔ ctx.send(message) : 명령어가 전송된 위치에 메세지를 전송한다.
+
+✔ ctx.author : 명령어를 전송한 사람에 대한 정보
+
+✔ ctx.channel : 명령어가 전송된 채널에 대한 정보
