@@ -1,0 +1,40 @@
+# cogs/example.py
+import discord
+from discord.ext import commands
+import json
+import random
+
+class Lunch(commands.Cog):
+    def __init__(self, client):
+        self.client = client
+				# 데이터 불러오기
+        with open("C:...\\lunch.json", 'r', encoding='utf-8') as f:
+            self.lunchDict = json.load(f)
+    
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print("Lunch Cog is Ready")
+
+    @commands.command(name ="점심추천")
+    async def recommand_lunch(self, ctx, arg = None, arg2 = None):
+        if arg == None and arg2 == None:
+            categories = list(self.lunchDict.keys())
+            category = random.choice(categories)
+            lunch = random.choice(self.lunchDict[category])
+            await ctx.send(f"오늘 점심은 {category}, 그 중에서 {lunch} 어떠세요?")
+        elif arg2 == None:
+            category = arg
+            lunch = random.choice(self.lunchDict[category])
+            await ctx.send(f"오늘 점심은 {lunch} 어떠세요?")
+        else:
+            category_list = [arg, arg2]
+            category = random.choice(category_list)
+            lunch = random.choice(self.lunchDict[category])
+            msg = ""
+            for i in category_list:
+                msg += (i + ' ')
+            await ctx.send(f"{msg}중에 오늘은 {category}, 그럼 점심은 {lunch} 어떠세요?")
+
+
+def setup(client):
+    client.add_cog(Lunch(client))
