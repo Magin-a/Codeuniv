@@ -1,0 +1,18 @@
+#블랙잭
+N, X = map(int, input().split())
+card = list(map(int, input().split()))
+len = len(card)
+result_list = []
+
+for i in range(len):
+
+    num1= card[i]
+    for x in range(i+1,len):
+        num2 = card[x]
+        for y in range(x+1, len):
+            result = 0
+            num3 = card[y]
+            result = num1+ num2 + num3
+            if result <= X:
+                result_list.append(result)
+print(max(result_list))
