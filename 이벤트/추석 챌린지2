@@ -1,0 +1,18 @@
+#달팽이 정상 정복
+def snail(A, B, N):
+    result = 0
+    day = 0
+    if A -B <= 0:
+        print(-1)
+    else:
+        while N > result:
+            day += 1
+            result += A
+            if N > result:
+                result -= B
+            else:
+                pass 
+        print(day)
+
+x, y, z = map(int, input().split())
+snail(x,y,z)
