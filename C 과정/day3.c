@@ -1,4 +1,4 @@
-//day3(¿Ã¡ﬂ ∆˜¿Œ≈Õ)
+//day3(√Ä√å√Å√ü √Ü√∑√Ä√é√Ö√ç)
 #include <stdio.h>
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -31,5 +31,5 @@ int main()
 	}
 
 
-	printf("√÷¥Î ∞™ : %d", **max_n);
+	printf(" : %d", **max_n);
 }
